@@ -1,0 +1,216 @@
+{% load static %}
+
+<!--<!DOCTYPE html>-->
+<html lang="ko">
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="{% static 'assets/css/timer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome1.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/camera.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .record-button {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.record-button:hover {
+  background-color: #fff;
+}
+
+.record-button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .record-button {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+        .stop-button {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.stop-button:hover {
+  background-color: #fff;
+}
+
+.stop-button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .stop-button {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.next-button {
+    margin: 50%;
+    text-align: center;
+}
+
+.next-button {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.next-button:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.next-button:focus {
+    outline: none;
+}
+.next-button {
+    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+h2 {
+    width:700px;
+    }
+    </style>
+</head>
+<body>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 1 - THE NAVBAR SECTION
+/////////////////////////////////////////////////////////////////////////////////////////////-->
+<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/mainapp/mainapp/">My First interview
+<!--        <img src="logo.png" alt="logo image">-->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#services">서비스소개</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">마이페이지</a></li>
+        </ul>>
+      </div>
+    </div>
+</nav>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                            START SECTION 2 - THE INTRO SECTION
+/////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--<form action="/mypage/" method="post">{% csrf_token %}-->
+
+<div class="wrapper">
+    <div id="app"></div>
+        <div class="video-container">
+            <div class="video-item">
+                <h2>Q2. 우리회사에 왜 지원했나요?</h2>
+                <video autoplay muted id ="preview"></video>
+            </div>
+            <!--<div class="video-item">
+                <h2>면접확인</h2>
+                <video id="recording"></video>
+            </div>-->
+        </div>
+        <div class="button-container" style="text-align:center;">
+                <button class="record-button" onclick="startTimer();">면접시작!</button>
+                <button class="stop-button" onclick="stopTimer();">면접완료!</button>
+                 <button class="next-button" onclick="location.href='../../interview/recording_3/'; ">NEXT</button>
+                <!--<button class="play-button">면접영상확인</button>-->
+                <!--<button class="test-button">test</button>-->
+    <!--            <p>{{ a }}</p>-->
+                <!--<a class="download-button" download>영상다운로드</a>-->
+        </div>
+</div>
+
+
+
+
+
+<!--        <div class="button-container">-->
+<!--            <input type = "submit"></button>-->
+<!--        </div>-->
+
+<!--</form>-->
+    <script src="{% static 'assets/js/timer.js' %}"></script>
+    <script src="{% static 'assets/js/camera.js' %}"></script>
+    <script src="{% static 'assets/vendors/glightbox/js/glightbox.min.js' %}"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+        'touchNavigation': true,
+        'href': 'https://www.youtube.com/watch?v=J9lS14nM1xg',
+        'type': 'video',
+        'source': 'youtube', //vimeo, youtube or local
+        'width': 900,
+        'autoPlayVideos': 'true',
+});
+
+    </script>
+     <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
