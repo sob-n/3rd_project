@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+  <title>Recording</title>
+  <link rel="stylesheet" href="{% static 'assets/css/timer.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/camera.css' %}">
+  <link rel="stylesheet" href="{% static 'custom/css/recording.css' %}">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="app"></div>
+    <div class="video-container">
+      <div class="video-item">
+        <h2 id="title">Q1. 자기소개 해주세요.</h2>
+        <video autoplay muted id="preview"></video>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="record-button" onclick="startTimer();">면접시작!</button>
+      <button class="stop-button" onclick="stopTimer();">면접완료!</button>
+      <button class="next-button" onclick="location.href='../../interview/recording_2/'; ">NEXT</button>
+    </div>
+  </div>
+
+  <script src="{% static 'assets/js/timer.js' %}"></script>
+  <!-- <script src="{% static 'assets/vendors/glightbox/js/glightbox.min.js' %}"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+  <!-- <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script> -->
+  <!-- <script src="{% static 'assets/js/moment.js' %}"></script> -->
+  <!-- <script src="{% static 'assets/js/trans.js' %}"></script> -->
+  <!-- <script src="{% static 'assets/js/camera.js' %}"></script> -->
+  {% endblock %}

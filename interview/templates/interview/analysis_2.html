@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/moment.js' %}"></script>
+    <script src="{% static 'assets/js/trans.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/timer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome1.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/camera.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/css/analysis_2.css' %}">
+<!--    &lt;!&ndash; Bootstrap &ndash;&gt;-->
+<!--    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">-->
+<!--    &lt;!&ndash; Font Awesome &ndash;&gt;-->
+<!--    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">-->
+<!--    &lt;!&ndash; NProgress &ndash;&gt;-->
+<!--    <link href="{% static 'assets/css/nprogress.css' %}" rel="stylesheet">-->
+<!--    &lt;!&ndash; iCheck &ndash;&gt;-->
+<!--    <link href="{% static 'assets/css/green.css' %}" rel="stylesheet">-->
+<!--    &lt;!&ndash; bootstrap-progressbar &ndash;&gt;-->
+<!--    <link href="{% static 'assets/css/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet">-->
+<!--    &lt;!&ndash; PNotify &ndash;&gt;-->
+<!--    <link href="{% static 'assets/css/pnotify.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'assets/css/pnotify.buttons.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'assets/css/pnotify.nonblock.css' %}" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Custom Theme Style &ndash;&gt;-->
+<!--    <link href="{% static 'assets/css/custom.min.css' %}" rel="stylesheet">-->
+</head>
+<body>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 1 - THE NAVBAR SECTION
+/////////////////////////////////////////////////////////////////////////////////////////////-->
+<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/mainapp/mainapp/">My First interview
+<!--        <img src="logo.png" alt="logo image">-->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#services">서비스소개</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">마이페이지</a></li>
+        </ul>>
+      </div>
+    </div>
+</nav>
+
+
+    <section id="subject">
+        <h2>면접영상 분석 결과</h2>
+    </section>
+
+<div>
+    <div id="sub">
+        <h3>종합리포트 세부분석</h3>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!--<script src="{% static 'assets/js/timer.js' %}"></script>-->
+<!--    <script src="{% static 'assets/js/camera.js' %}"></script>-->
+    <script src="{% static 'assets/vendors/glightbox/js/glightbox.min.js' %}"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+        'touchNavigation': true,
+        'href': 'https://www.youtube.com/watch?v=J9lS14nM1xg',
+        'type': 'video',
+        'source': 'youtube', //vimeo, youtube or local
+        'width': 900,
+        'autoPlayVideos': 'true',
+});
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

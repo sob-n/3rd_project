@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <title>Recording</title>
+    <link rel="stylesheet" href="{% static 'assets/css/timer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/camera.css' %}">
+    <link rel="stylesheet" href="{% static 'custom/css/recording.css' %}">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="app"></div>
+        <div class="video-container">
+            <div class="video-item">
+                <!-- django에서 보내줄 부분 -->
+                <h2 id="title">{{question}}</h2>
+                <video autoplay muted id="preview"></video>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="record-button" onclick="startTimer();">면접시작!</button>
+            <button class="stop-button" onclick="stopTimer();">면접완료!</button>
+            <!-- django에서 보내줄 부분 -->
+            {% if page_num <= max_page %}
+            <button class="next-button" onclick="location.href='/interview/recording/{{page_num}}'; ">NEXT</button>
+            {%else%}
+            <button class="next-button" onclick="location.href='/interview/analysis'; ">분석결과</button>
+            {%endif%}
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'assets/js/timer.js' %}"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/moment.js' %}"></script>
+<script src="{% static 'assets/js/camera.js' %}"></script>
+{% endblock %}

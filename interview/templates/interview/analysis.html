@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+  <title>Analysis</title>
+  <link rel="stylesheet" href="{% static 'assets/css/animated.css' %}">
+  <link rel="stylesheet" href="{% static 'custom/css/analysis.css' %}">
+
+</head>
+
+<body>
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h6>{{ user }} <em> 님의</em></h6>
+            <h4>면접 영상 분석 <em>결과</em></h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="analysis-tab">
+    <div class="tab-tot select-box">
+      종합 리포트
+    </div>
+    <div class="tab-detail">
+      세부 분석
+    </div>
+  </div>
+
+  <div class="analysis-result">
+    <div class="analysis-result-container general-review">
+      <h5>총평</h5>
+      <div class="content-box">
+        <div class="total-score-box general-review-content inblock">
+          <p><em>종합 점수</em></p>
+          <!-- 그래프 들어가는 공간(종합 점수 : 도넛 그래프/차지 그래프) -->
+          <div class="chart-box tot-score">
+          </div>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="completion-box general-review-content inblock">
+          <p><em>면접 준비 완성도</em></p>
+          <div class="question-box">
+            <p>Q1</p>
+            <p>Q2</p>
+            <p>Q3</p>
+            <p>Q4</p>
+          </div>
+          <div class="completion-score-box">
+
+            <div class="score-pass"> </div>
+            <div class="score-fail"> </div>
+            <div class="score-pass"> </div>
+            <div class="score-pass marginX"> </div>
+          </div>
+          <div class="attribute-box">
+            <!-- 특징 이미지 아이콘 들어갈 공간 -->
+            <img class="attribute-icon" src="{% static 'images/ex6.png' %}" alt="attribute-icon">
+            <img class="attribute-icon" src="{% static 'images/ex6.png' %}" alt="attribute-icon">
+            <img class="attribute-icon" src="{% static 'images/ex6.png' %}" alt="attribute-icon">
+          </div>
+        </div>
+        <div class="comment-box">
+          <p class="comment">{{user}} 님의 면접 종합 점수는 <span class="score">75</span>점 입니다.<br><span
+              class="comment tot-advice">응시자 님의 면접 질문 별 답변 완성도는 전체적으로 높은 수준입니다. <br>이제 응시자
+              님의 특성 요약을 확인하시고 면접 자세와 답변 내용을 검토해 보세요.</span></p>
+        </div>
+      </div>
+      <h5>평가 요소별 점수</h5>
+      <div class="advice-box">
+        <div class="chart-box rosechart">
+          <!-- <div class="rosechart"> -->
+          <!-- 그래프 들어가는 공간(평가 요소별 점수 : 로즈 차트) -->
+          <!-- <img src="{% static 'images/ex3.png' %}" alt="chart"> -->
+
+          <!-- </div> -->
+        </div>
+        <div class="comment-box inblock">
+          <p class="blink-comment"><em>눈 깜빡임 </em>: 총 00회<br>시선 처리가 안정적입니다 등 코멘트</p>
+          <p class="direction-comment"><em>머리 움직임 </em>: 총 00회<br>코멘트</p>
+          <p class="emotion-comment"><em>웃는 표정 비율 </em>: 00 %<br>코멘트</p>
+          <p class="rate-comment"><em>말 빠르기 </em><br>코멘트</p>
+          <p class="time-comment"><em>답변 시간</em><br>코멘트</p>
+          <p class="filler-comment"><em>추임새 </em>: 음 : 0회 그 : 0회 어: 0회<br>코멘트</p>
+          <p class="pitch-comment"><em>목소리 톤 </em> 아래 단어들을 강조하셨어요.<br>코멘트</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-result-container detail-review not-display">
+      <!-- <p>username님의 면접 영상을 아래의 면접 평가 요소별로 분석하였습니다.</br>다른 이용자와 나의 행동 습관을 비교할 수 있습니다.</p> -->
+      <div class="vedio-analysis-result">
+        <h5>행동 분석</h5>
+        <div class="interviewee-img-box flex">
+          <!-- 이미지 들어가는 공간 : 면접자 -->
+          <img src="{% static 'images/ex4.png' %}" alt="interviewee">
+          <img src="{% static 'images/ex4.png' %}" alt="interviewee">
+          <img src="{% static 'images/ex4.png' %}" alt="interviewee">
+          <img src="{% static 'images/ex4.png' %}" alt="interviewee">
+        </div>
+        <div class="blink-graph-box flex">
+          <!-- 이미지 들어가는 공간 : 눈 깜빡임 -->
+          <p class="analysis tag"><em>눈 깜빡임</em></p>
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+        </div>
+        <div class="direction-graph-box flex">
+          <!-- 이미지 들어가는 공간 : 머리 움직임 -->
+          <p class="analysis tag"><em>머리 움직임</em></p>
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+        </div>
+        <div class="emotion-graph-box flex">
+          <!-- 이미지 들어가는 공간 : 표정 -->
+          <p class="analysis tag"><em>표정</em></p>
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+        </div>
+      </div>
+      <hr>
+      <div class="audio-analysis-result">
+        <h5>음성 분석</h5>
+        <div class="wordcount-box flex">
+          <!-- 이미지 들어가는 공간 : wordcloud -->
+          <img src="{% static 'images/ex5.png' %}" alt="wordcloud">
+          <img src="{% static 'images/ex5.png' %}" alt="wordcloud">
+          <img src="{% static 'images/ex5.png' %}" alt="wordcloud">
+          <img src="{% static 'images/ex5.png' %}" alt="wordcloud">
+        </div>
+        <div class="rate-graph-box flex">
+          <!-- 이미지 들어가는 공간 : 말 빠르기 -->
+          <p class="analysis tag"><em>말 빠르기</em></p>
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+        </div>
+        <div class="pitch-graph-box flex">
+          <!-- 이미지 들어가는 공간 : 톤 분석 -->
+          <p class="analysis tag"><em>톤 분석</em></p>
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+          <img src="{% static 'images/ex2.png' %}" alt="chart">
+        </div>
+        <div class="filler-box flex">
+          <p class="analysis tag"><em>추임새</em></p>
+          <p>음: 0회 그: 0회 어: 0회</p>
+        </div>
+
+        <!-- </div> -->
+        <hr>
+        <!-- <div> -->
+
+        <h5>Script</h5>
+        <div class="script-box">
+          <div class="script flex">
+            <h6 class="question tag">Q1 자기소개</h6>
+            <p class="script-question-1">STT 결과 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum optio
+              incidunt consectetur, iusto expedita est in fuga! Voluptas ipsa, repudiandae eos, voluptatum iusto illum
+              maxime, repellat corrupti optio voluptatibus voluptates?</p>
+          </div>
+          <div class="script flex">
+            <h6 class="question tag">Q2 지원동기</h6>
+            <p class="script-question-2">Magnam libero sunt perferendis assumenda sit, culpa fugit repellendus voluptate
+              iure eius quasi ad, molestiae nam accusantium sequi enim architecto. Doloremque, dolorem.</p>
+          </div>
+          <div class="script flex">
+            <h6 class="question tag">Q3 장점</h6>
+            <p class="script-question-3">Ullam pariatur accusamus debitis, modi itaque ipsum! Facere, ea quod? Modi
+              architecto corrupti, dolorem consequatur possimus similique corporis, maiores, quidem vero eius alias ex
+              culpa sapiente reprehenderit at perferendis quae! Dolorum dicta laudantium quod magni distinctio cum animi
+              labore, ipsum qui magnam.</p>
+          </div>
+          <div class="script flex">
+            <h6 class="question tag">Q4 어려움/극복</h6>
+            <p class="script-question-4">Facere nihil eos quos dolor doloremque dicta consequatur harum blanditiis,
+              architecto exercitationem?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!-- </div> -->
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="{% static 'custom/js/analysis.js' %}"></script>
+{% endblock %}
